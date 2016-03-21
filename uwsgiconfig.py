@@ -188,7 +188,7 @@ def has_usable_ucontext():
     if uwsgi_cpu[0:3] == 'arm':
         return False
     # check for ucontext.h functions definitions, musl has only declarations
-    return test_snippet("""#include <ucontext.h>
+    return test_snippet(b"""#include <ucontext.h>
 int main()
 {
 	ucontext_t uc;
